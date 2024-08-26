@@ -10,7 +10,7 @@
            
          <title>民宿詳細</title>   
      </head>
-     <body>
+     <bodyy>
          <div class="samuraitravel-wrapper">
              <!-- ヘッダー -->
              <div th:replace="~{fragment :: header}"></div>
@@ -111,9 +111,7 @@
                                              </div>
                                          </div>                                
                                      </div>
-                                     
-                                                           
-                                                                                                              
+                                                                                                                                                                                                            
                                      
                                      <div sec:authorize="isAnonymous()" class="col-lg-4 px-0 ps-lg-4 mb-4">                  
                                          <div class="card">
@@ -145,7 +143,8 @@
                                                      </div>
                                                  </form>                                                                     
                                              </div>
-                                           
+                                           </div>
+                                        </div>
 
                                      <!-- レビュー -->
                                      <h1 class="mb-4 text-center">レビュー</h1>
@@ -170,12 +169,19 @@
                                       <div class="col-12">
                                       <p th:text="${review.description}"></p>
                                     </div>
-                                  </div>
+                                  </div>                                                                    
                                </div>
                                
                                       <!-- すべてのレビューを見る -->
-                                  <div>  
-                                  <a th:href="@{/review/index}" class="mb-4 text-center">すべてのレビューを見る</a>
+                                  <div> 
+									  <div>
+                                        <a th:href="@{/review/index}" class="mb-4 text-center">すべてのレビューを見る</a>
+                                      </div>
+                                      <!-- レビューがない時 -->
+                                      <div>
+									  <a　class="mb-4 text-center">まだレビューはありません</a>
+								      </div>
+                                      
                                   </div>
                                      
                                     <!-- ログイン時のみレビュー投稿ボタン -->
@@ -188,13 +194,14 @@
                                      </div>                                                                                                                     
                                  </div>                                                                                             
                              </div>
-                         </div>
-                     </div>
-                 </div>
-             </main>
+                        
+                     
+                 
+              </main>
              
-             <!-- フッター -->
+               <!-- フッター -->
              <div th:replace="~{fragment :: footer}"></div>
+            </div>
          </div>    
          
          <div th:replace="~{fragment :: scripts}"></div> 
